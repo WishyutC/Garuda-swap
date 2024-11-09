@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore(Crypto Dashboard)</title>
+    <link rel="stylesheet" href="index.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="index.js"></script>
+</head>
+<body>
+    <!-- Navigation bar -->
+    <ul class="nav-bar">
+        <li><a href="../index.html" target="_self">Home</a></li>
+    </ul>
+
+    <header>Explore<br>Crypto Dashboard</header>
+
+    <div class="crypto-container">
+        <div class="crypto-box">
+            <h3>Bitcoin (BTC)</h3>
+            <canvas id="bitcoinChart"></canvas>
+        </div>
+        <div class="crypto-box">
+            <h3>Ethereum (ETH)</h3>
+            <canvas id="ethereumChart"></canvas>
+        </div>
+        <div class="crypto-box">
+            <h3>Tether (USDT)</h3>
+            <canvas id="tetherChart"></canvas>
+        </div>
+        <div class="crypto-box">
+            <h3>USD Coin (USDC)</h3>
+            <canvas id="usdCoinChart"></canvas>
+        </div>
+        <div class="crypto-box">
+            <h3>Binance Coin (BNB)</h3>
+            <canvas id="binanceCoinChart"></canvas>
+        </div>
+    </div>
+</body>
+</html>

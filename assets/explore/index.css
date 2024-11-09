@@ -1,0 +1,100 @@
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #2b2b2b;
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #0c0c0c;
+    color: rgb(186, 186, 186);
+    margin: 0;
+    background: linear-gradient(45deg, #2a2a2a, #1e1e1e, #4f4f4f, #363636);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite;
+    height: 100vh;
+    
+}
+
+header {
+    padding: 20px;
+    background-color: #333;
+    width: 100%;
+    text-align: center;
+    color: gold;
+    font-size: 1.5rem;
+    font-weight: bold;
+    border-bottom: 2px solid #444;
+}
+
+.crypto-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.crypto-box {
+    background-color: #3a3a3a;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.crypto-box:hover {
+    transform: scale(1.05);
+}
+
+.crypto-box h3 {
+    color: gold;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
+}
+
+canvas {
+    width: 100% !important;
+    max-height: 250px; /* Set max height for balance */
+}
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-bar li {
+    margin: 0px;
+}
+
+.nav-bar a {
+    color: rgb(186, 186, 186);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-bar a:hover {
+    color: white;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

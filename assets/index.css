@@ -1,0 +1,339 @@
+
+body {
+    background-color: #0c0c0c;
+    color: rgb(186, 186, 186);
+    margin: 0;
+    background: linear-gradient(45deg, #2a2a2a, #1e1e1e, #4f4f4f, #363636);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite;
+    height: 100vh;
+    margin: 0;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    opacity: 0.75;
+    font-size: 20px;
+}
+
+
+li {
+    float: left;
+}
+
+li.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+
+li a {
+    display: block;
+    color: rgb(186, 186, 186);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: white;
+}
+
+
+li.icons img, .garuda {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -15px;
+}
+
+
+.search-bar input[type="text"] {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 400px;
+    margin-left: 130px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    width: 400px;
+}
+
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+
+.block {
+    width: 40%; 
+    margin: 35px auto;
+    background-color: rgb(53, 53, 71);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 335px;
+    position: relative; 
+}
+
+.inner-block-top {
+    flex: 1;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #0a0a0a; 
+    padding: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); */
+    position: relative;
+}
+
+
+.inner-block-bottom{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.inner-block-top {
+    background-color: white;
+    opacity: 100%;
+}
+
+.inner-block-bottom {
+    background-color: #d0d0d0;
+    opacity: 100%;
+}
+
+
+.block3 {
+    width: 90px;
+    height: 40px;
+    background-color: #ffcccc;
+    border-radius: 40px;
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+
+
+
+.arrow-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; 
+}
+
+
+.arrow-box img {
+    width: 60px; 
+    height: auto;
+    margin-top: 20px; 
+    display: block;
+    z-index: 4; 
+    
+}
+
+
+
+input[type="number"] {
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none;
+    background-color: transparent;
+    border:  none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    margin-bottom: -80px;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 40%;
+    margin-top: 30px; 
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #fbfaff;
+    
+}
+
+
+.dropdown-container {
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 90px; 
+}
+
+.dropdown {
+    width: 100%; 
+    height: 40px; 
+    border-radius: 40px; 
+    background-color: goldenrod; 
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.text {
+    margin: 0;
+    color: #0c0c0c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subnum input {
+    font-size: 14px; 
+}
+
+
+.confirmed-button {
+    background-color: #28a745; 
+    color: white; /* White text */
+    border: 2px solid #90ee90; /* Light green outline */
+    
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Rounded corners */
+    width:  25%; /* Full width if you want block level */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, border 0.3s; /* Smooth transition */
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirmed-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #80e0a7; /* Slightly darker light green outline on hover */
+}
+
+.confirmed-button:active {
+    background-color: #1e7e34; /* Even darker green on click */
+    border-color: #66d08d; /* Even darker light green on click */
+}
+
+
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Search container positioning */
+.search-container {
+    position: relative;
+}
+
+
+
+
+
+/* Dropdown link styles */
+.dropdown-box a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    background-color: rgb(0, 0, 0);
+}
+
+
+
+/* Show the dropdown when search input is focused */
+.search-input:focus + .dropdown-box {
+    display: block;
+}
+
+/* Styling for the image icons in the dropdown */
+.img_option {
+    width: 20px; /* Adjust the size of the icons */
+    height: 20px;
+    margin-right: 10px; /* Space between image and text */
+    vertical-align: middle; /* Align image with text */
+    border-radius: 5px; /* Optional: add rounded corners to the images */
+}
+
+/* Dropdown box hidden by default */
+.dropdown-box {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 100%; /* Position it below the input */
+    left: 340px; /* Move it to the center */
+    transform: translateX(-50%); /* Offset by half of the width of the dropdown to center it */
+    background-color: #f1f1f1;
+    min-width: 44%; /* Ensure it doesn't exceed the search bar width */
+    max-height: 400px; /* Adjust the max height as needed */
+    overflow-y: auto; /* Make dropdown scrollable if the content exceeds the height */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999; /* Ensure it appears above other content */
+}
+
+/* Show the dropdown when the input field is focused */
+.search-container:focus-within .dropdown-box {
+    display: block; /* Show the dropdown when the input is focused */
+}
+
+/* Globe icon styling */
+.globeicon img {
+    width: 30px; /* Adjust size of the globe icon */
+    cursor: pointer;
+}
+
+/* Language Dropdown styling */
+.language-dropdown {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: 60px; /* Position it below the globe icon */
+    left: 1357px; /* Center it relative to the globe */
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    width: 150px;
+    padding: 10px 0;
+}
+
+.language-dropdown a {
+    display: block;
+    padding: 8px 10px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.language-dropdown a:hover {
+    background-color: #ddd;
+}
+
+/* Show the dropdown when the globe icon is clicked */
+.globeicon.active + .language-dropdown {
+    display: block;
+}

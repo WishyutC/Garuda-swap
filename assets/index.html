@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="image/garuda.png">
+    <title>Garuda Swap</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <ul>
+        <li><a href="index.html" target="_self">Home</a></li>
+        <li><a href="wallet/index.html" target="_self">Wallet</a></li>
+        <li><a href="explore/index.html" target="_self">Explore</a></li>
+        <li><a href="about/index.html" target="_self">About</a></li>
+        
+        <!-- Search Bar with Dropdown -->
+        <li class="search-bar">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search..." id="searchInput" />
+                <div class="dropdown-box" id="dropdownBox">
+                    <a href="#"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC" class="img_option">Bitcoin (BTC)</a>
+                    <a href="#"><img src="https://w7.pngwing.com/pngs/268/1013/png-transparent-ethereum-eth-hd-logo-thumbnail.png" alt="ETH" class="img_option">Ethereum (ETH)</a>
+                    <a href="#"><img src="https://seeklogo.com/images/T/tether-usdt-logo-FA55C7F397-seeklogo.com.png" alt="USDT" class="img_option">Tether (USDT)</a>
+                    <a href="#"><img src="image/usdc_logo.png" alt="USDC" class="img_option">USD Coin (USDC)</a>
+                    <a href="#"><img src="image/bcb_logo.png" alt="BNB" class="img_option">Binance Coin (BNB)</a>
+                </div>
+            </div>
+        </li>
+
+        <li class="icons">
+            <div class="globeicon" id="globeIcon" style="padding-left: 30px;">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz2YZSpDSAqhcqKk1_7MgdQLgBEjhEAiJR3g&s" alt="globe icon">
+            </div>
+            <div class="language-dropdown" id="languageDropdown">
+                <a href="#" class="lang-option" onclick="setLanguage('th')">Thai</a>
+                <a href="#" class="lang-option" onclick="setLanguage('en')">English</a>
+            </div>
+            <div class="usericon" style="padding-right: 30px;">
+                <a href="login/index.html"><img src="https://cdn-icons-png.freepik.com/256/14024/14024728.png?semt=ais_hybrid" alt="user icon" ></a>
+            </div>
+        </li>
+    </ul>
+
+    <h1>Welcome to Garuda Project <br>Crypto Exchange.</h1>
+
+    <div class="block">
+        <div class="inner-block-top">
+            <div class="dropdown-container">
+                <select class="dropdown" id="sellDropdown">
+                    <option value="BTC">BTC</option>
+                    <option value="ETH">ETH</option>
+                    <option value="USDT">USDT</option>
+                    <option value="USDC">USDC</option>
+                    <option value="BNB">BNB</option>
+                </select>
+            </div>
+            <div class="text">Sell</div>
+            <input type="number" id="sellInput" placeholder="0" /><br>
+        </div>
+
+        <div class="arrow-box">
+            <img src="image/arrow_no_bg.png" alt="arrow icon">
+        </div>
+
+        <div class="inner-block-bottom">
+            <div class="dropdown-container">
+                <select class="dropdown" id="buyDropdown">
+                    <option value="BTC">BTC</option>
+                    <option value="ETH">ETH</option>
+                    <option value="USDT">USDT</option>
+                    <option value="USDC">USDC</option>
+                    <option value="BNB">BNB</option>
+                </select>
+            </div>
+            <div class="text">Buy</div>
+            <input type="number" id="buyInput" placeholder="0" readonly />
+        </div>
+    </div>
+
+    <button class="confirmed-button" onclick="confirmExchange()">Confirmed</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('searchInput');
+            const dropdownBox = document.getElementById('dropdownBox');
+
+            searchInput.addEventListener('input', function() {
+                dropdownBox.style.display = this.value.trim() ? 'block' : 'none';
+            });
+
+            document.addEventListener('click', function(event) {
+                if (!searchInput.contains(event.target) && !dropdownBox.contains(event.target)) {
+                    dropdownBox.style.display = 'none';
+                }
+            });
+
+            // Language selection
+            function setLanguage(lang) {
+                alert('Language set to: ' + lang);
+            }
+
+            // Real-time exchange rates from a hypothetical API endpoint
+            let conversionRates = {};
+
+            async function fetchExchangeRates() {
+                try {
+                    const response = await fetch('https://api.coingecko.com/api/v3/simple/price?ids=bitcoin,ethereum,tether,usd-coin,binancecoin&vs_currencies=usd');
+                    const data = await response.json();
+                    
+                    conversionRates = {
+                        'BTC': data.bitcoin.usd,
+                        'ETH': data.ethereum.usd,
+                        'USDT': data.tether.usd,
+                        'USDC': data['usd-coin'].usd,
+                        'BNB': data.binancecoin.usd
+                    };
+                } catch (error) {
+                    console.error('Error fetching exchange rates:', error);
+                    alert('Unable to fetch exchange rates. Please try again later.');
+                }
+            }
+
+            fetchExchangeRates();
+
+            const sellInput = document.getElementById('sellInput');
+            const buyInput = document.getElementById('buyInput');
+            const sellDropdown = document.getElementById('sellDropdown');
+            const buyDropdown = document.getElementById('buyDropdown');
+
+            function calculateConversion() {
+                const sellCurrency = sellDropdown.value;
+                const buyCurrency = buyDropdown.value;
+                const sellAmount = parseFloat(sellInput.value);
+
+                if (!isNaN(sellAmount) && conversionRates[sellCurrency] && conversionRates[buyCurrency]) {
+                    const buyAmount = (sellAmount * conversionRates[sellCurrency]) / conversionRates[buyCurrency];
+                    buyInput.value = buyAmount.toFixed(4);
+                }
+            }
+
+            sellInput.addEventListener('input', calculateConversion);
+            sellDropdown.addEventListener('change', calculateConversion);
+            buyDropdown.addEventListener('change', calculateConversion);
+
+            const globeIcon = document.getElementById('globeIcon');
+            const languageDropdown = document.getElementById('languageDropdown');
+
+            globeIcon.addEventListener('click', function() {
+                languageDropdown.style.display = languageDropdown.style.display === 'block' ? 'none' : 'block';
+            });
+
+            function confirmExchange() {
+                const sellAmount = sellInput.value;
+                const sellCurrency = sellDropdown.value;
+                const buyAmount = buyInput.value;
+                const buyCurrency = buyDropdown.value;
+
+                if (sellAmount && buyAmount) {
+                    alert(`Confirmed exchange of ${sellAmount} ${sellCurrency} for ${buyAmount} ${buyCurrency}.`);
+                } else {
+                    alert('Please enter a valid sell amount and ensure exchange rates are available.');
+                }
+            }
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Existing setup...
+    
+            window.confirmExchange = function() {
+                const sellAmount = sellInput.value;
+                const sellCurrency = sellDropdown.value;
+                const buyAmount = buyInput.value;
+                const buyCurrency = buyDropdown.value;
+    
+                if (sellAmount && buyAmount) {
+                    // Prepare the transaction log
+                    const transactionDetails = `Transaction Log:
+    - Sell Amount: ${sellAmount} ${sellCurrency}
+    - Buy Amount: ${buyAmount} ${buyCurrency}
+    - Date: ${new Date().toLocaleString()}\n`;
+    
+                    // Create a Blob with the transaction log data
+                    const blob = new Blob([transactionDetails], { type: 'text/plain' });
+                    const url = URL.createObjectURL(blob);
+    
+                    // Create a temporary download link
+                    const link = document.createElement('a');
+                    link.href = url;
+                    link.download = 'transaction_log.txt';
+                    
+                    // Programmatically click the link to trigger the download
+                    link.click();
+    
+                    // Clean up the URL object
+                    URL.revokeObjectURL(url);
+    
+                    alert(`Confirmed exchange of ${sellAmount} ${sellCurrency} for ${buyAmount} ${buyCurrency}.`);
+                } else {
+                    alert('Please enter a valid sell amount and ensure exchange rates are available.');
+                }
+            };
+        });
+    </script>
+    
+</body>
+</html>

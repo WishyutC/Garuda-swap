@@ -1,0 +1,102 @@
+/* Dark Theme Background */
+body {
+    background-color: #0c0c0c;
+    color: rgb(186, 186, 186);
+    margin: 0;
+    background: linear-gradient(45deg, #2a2a2a, #1e1e1e, #4f4f4f, #363636);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite;
+    height: 100vh;
+}
+
+/* Navigation Bar */
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    opacity: 0.75;
+    font-size: 20px;
+}
+
+li {
+    float: left;
+}
+
+li.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+li a {
+    display: block;
+    color: rgb(186, 186, 186);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: white;
+}
+
+li.icons img.garuda {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -15px;
+}
+
+/* Wallet Display Block */
+.wallet-block {
+    width: 40%;
+    margin: 50px auto;
+    background-color: rgb(53, 53, 71);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+.wallet-id {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/* Button Styling */
+.button {
+    background-color: #28a745;
+    color: white;
+    border: 2px solid #90ee90;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, border 0.3s;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #218838;
+    border-color: #80e0a7;
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}

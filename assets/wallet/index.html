@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="imge/garuda.png">    
+    <title>Garuda Wallet</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <ul>
+        <li class="icons">
+            <img src="imge/garuda.png" class="garuda" alt="Garuda Logo">
+            <a href="../index.html">Home</a>
+        </li>
+    </ul>
+
+    <!-- Wallet Display Block -->
+    <div class="wallet-block">
+        <h1>Garuda Wallet</h1>
+        <p class="wallet-id">Wallet ID: 1234-5678-ABCD-EFGH</p>
+        <p class="wallet-balance">Balance: <span id="walletBalance">$0.00</span></p> <!-- Display wallet balance -->
+        <button class="button">Manage Wallet</button>
+    </div>
+
+    <script src>
+        // Example of dynamically setting the wallet balance (this could be fetched from a server)
+        const walletBalance = 100.50; // This is just an example. Replace it with actual dynamic data.
+        
+        // Update the wallet balance on the page
+        document.getElementById("walletBalance").textContent = `$${walletBalance.toFixed(2)}`;
+    </script>
+</body>
+</html>

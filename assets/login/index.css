@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0c0c0c;
+    color: rgb(186, 186, 186);
+    margin: 0;
+    background: linear-gradient(45deg, #2a2a2a, #1e1e1e, #4f4f4f, #363636);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite;
+    height: 100vh;
+    
+}
+
+/* Main container */
+.login-container, .signup-container {
+    width: 350px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    text-align: center;
+    display: none;  /* Initially hide both, switch via JS */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Box styling */
+.box {
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-align: left;
+}
+
+/* Title */
+h2 {
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Labels and inputs */
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus {
+    border-color: #4CAF50;
+    outline: none;
+}
+
+/* Button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+button:active {
+    background-color: #388e3c;
+}
+
+/* Error message */
+#loginMessage, #signupMessage {
+    margin-top: 15px;
+    color: red;
+    font-size: 0.9em;
+}
+
+/* Switch buttons (Login / Sign Up) */
+.switch-btn {
+    margin-top: 10px;
+    color: #4CAF50;
+    text-decoration: none;
+    font-size: 0.9em;
+    cursor: pointer;
+}
+
+.switch-btn:hover {
+    text-decoration: underline;
+}
+
+/* Show login and signup forms */
+.show-login {
+    display: block;
+}
+
+.show-signup {
+    display: block;
+}
+
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    padding: 0;
+    background-color: transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-bar li {
+    margin: 0px;
+}
+
+.nav-bar a {
+    color: rgb(186, 186, 186);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-bar a:hover {
+    color: white;
+}
+
+/* Background Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}

@@ -1,0 +1,272 @@
+
+body {
+    background-color: #0c0c0c;
+    color: rgb(186, 186, 186);
+    margin: 0;
+    background: linear-gradient(45deg, #2a2a2a, #1e1e1e, #4f4f4f, #363636);
+    background-size: 400% 400%;
+    animation: gradientAnimation 7s ease infinite;
+    height: 100vh;
+    margin: 0px;
+    font-size: 20px;
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    opacity: 0.75;
+    font-size: 25px;
+}
+
+
+li {
+    float: left;
+}
+
+li.icons {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-left: 15px;
+}
+
+/* Link styling inside list items */
+li a {
+    display: block;
+    color: rgb(186, 186, 186);
+    text-align: center;
+    padding: 25px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: color 0.3s ease-in-out;
+}
+
+li a:hover {
+    color: white;
+}
+
+/* Icon styling */
+li.icons img, .garuda {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: -15px;
+}
+
+/* Search bar input field styling */
+.search-bar input[type="text"] {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 400px;
+    margin-left: 130px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    width: 400px;
+}
+
+/* Header styling */
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Main large block container */
+.block {
+    width: 40%; 
+    margin: 35px auto;
+    background-color: rgb(53, 53, 71);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 335px;
+    position: relative; 
+}
+
+/* Top and bottom inner blocks */
+.inner-block-top {
+    flex: 1;
+    background-color: transparent;
+    border-radius: 8px;
+    border: 1px solid #0a0a0a; 
+    padding: 20px;
+    position: relative;
+}
+
+.inner-block-bottom{
+    flex: 1;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.inner-block-top {
+    background-color: white;
+    opacity: 100%;
+}
+
+.inner-block-bottom {
+    background-color: #d0d0d0;
+    opacity: 100%;
+}
+
+/* Block3 styling for left alignment and vertical centering */
+.block3 {
+    width: 90px;
+    height: 40px;
+    background-color: #ffcccc;
+    border-radius: 40px;
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%);
+}
+
+/* Arrow box styling without visible container */
+.arrow-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 3; 
+}
+
+/* Arrow image styling */
+.arrow-box img {
+    width: 60px; 
+    height: auto;
+    margin-top: 20px; 
+    display: block;
+    z-index: 4; 
+}
+
+/* Currency input field styling (transparent) */
+input[type="number"] {
+    -moz-appearance: textfield; 
+    -webkit-appearance: none; 
+    appearance: none;
+    background-color: transparent;
+    border:  none;
+    color: rgb(0, 0, 0);
+    padding: 0;
+    margin-bottom: -80px;
+    font-size: 30px;
+    border-radius: 5px;
+    width: 40%;
+    margin-top: 30px; 
+}
+
+input[type="number"]:focus {
+    outline: none;
+    border-color: #fbfaff;
+}
+
+/* Dropdown for currency (block3) */
+.dropdown-container {
+    position: absolute; 
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    width: 90px; 
+}
+
+.dropdown {
+    width: 100%; 
+    height: 40px; 
+    border-radius: 40px; 
+    background-color: goldenrod; 
+    border: none;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.text {
+    margin: 0;
+    color: #0c0c0c;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.subnum input {
+    font-size: 14px; 
+}
+
+.confirmed-button {
+    background-color: #28a745; /* Green background */
+    color: white; /* White text */
+    border: 2px solid #90ee90; /* Light green outline */
+    
+    padding: 10px 20px; /* Adjust padding */
+    font-size: 16px; /* Adjust font size */
+    border-radius: 5px; /* Rounded corners */
+    width:  25%; /* Full width if you want block level */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, border 0.3s; /* Smooth transition */
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.confirmed-button:hover {
+    background-color: #218838; /* Darker green on hover */
+    border-color: #80e0a7; /* Slightly darker light green outline on hover */
+}
+
+.confirmed-button:active {
+    background-color: #1e7e34; /* Even darker green on click */
+    border-color: #66d08d; /* Even darker light green on click */
+}
+
+img {
+    display: block;           /* Makes the image a block element */
+    margin-left: auto;        /* Adds automatic margin on the left */
+    margin-right: auto;       /* Adds automatic margin on the right */
+    width: 240px;             /* Set the image width as needed */
+    height: auto;             /* Ensure the aspect ratio is maintained */
+    
+}
+
+/* Navigation Bar Styling */
+.nav-bar {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    margin-right: 30px;
+    padding: 0;
+    background-color: #2a2a2a;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-bar li {
+    margin: 0px;
+}
+
+.nav-bar a {
+    color: rgb(186, 186, 186);
+    text-decoration: none;
+    padding: 15px 20px;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-bar a:hover {
+    color: white;
+}
+
+p {
+    margin: 50px;
+}
